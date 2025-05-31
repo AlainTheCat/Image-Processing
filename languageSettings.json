@@ -1,0 +1,14 @@
+{
+    "language0": {
+        "id": 0,
+        "name": "English",
+        "enable": true,
+        "file": "Image_en.qm"
+    },
+    "language1": {
+        "id": 1,
+        "name": "Fran\u00e7ais",
+        "enable": false,
+        "file": null
+    }
+}

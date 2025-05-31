@@ -1,0 +1,2823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1502</width>
+    <height>987</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1729</width>
+    <height>990</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>10</width>
+    <height>10</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Image Processing with Python</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/newPrefix/Icons/Mao48x48.ico</normaloff>:/newPrefix/Icons/Mao48x48.ico</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>48</width>
+    <height>48</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBoxLocalFilters">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>10</y>
+      <width>171</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Local Filters</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonLuminance">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Renders the image in black and white&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Luminance</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonWindowing">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Processes the image by windowing (Narrows the spectrum)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Windowing</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonThresholding">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Strengthens the color level above a threshold (from 1 to 255) otherwise cancels them&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Thresholding</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBinarization">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Maximizes the color level above a threshold (from 1 to 255) otherwise cancels them&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Binarization</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonNegative">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Restores the negative of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Negative</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRedFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects only the red color component of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Red Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGreenFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects only the green color component of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Green Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBlueFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects only the blue color component of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Blue Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTransparency">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changes the opacity or transparency of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Transparency</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBrightness">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changes the brightness of the image from 1 to 99&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Brightnesss</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonContrast">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changes the contrast of the image from 1 to 99&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Contrast</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRGB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modifies the color components red, green and blue de l'image from 1 to 99)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>RGB</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRedEffect">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Keeps only the red components of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Red Effect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGreyLevel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>420</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with 2 to 8 gray levels&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Grey Level</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonColorLevel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>450</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with 2 to 8 color levels&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Color Level</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFalseColors">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>480</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Changes the color components of the image by permutation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>False Colors</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonSepia">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a sepia tint to the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Sepia</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSlider" name="sliderA">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>600</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="sliderB">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>630</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelA">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>630</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>B:</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LcdA">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>600</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#LcdA {
+ color: red;
+ background-color: yellow;
+ }</string>
+    </property>
+    <property name="value" stdset="0">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LcdB">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>630</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#LcdB {
+color: red;
+background-color: yellow;
+}</string>
+    </property>
+    <property name="value" stdset="0">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LcdC">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>660</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#LcdC {
+ color: red;
+background-color: yellow;
+ }</string>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="sliderC">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>660</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>20</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelC">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>660</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelD">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>600</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D:</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="sliderD">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>600</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>99</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="sliderPosition">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LcdD">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>600</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#LcdD {
+ color: white;
+ background-color: red;
+ }</string>
+    </property>
+    <property name="value" stdset="0">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdWidthImage1">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>690</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdLargeur {
+ color: red;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelWidthImage1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>690</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Width of image 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelHeightImage1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>730</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Height of image 1</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdHeightImage1">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>730</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdHauteur {
+ color: red;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDepthImage1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>770</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Depth of image 1</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdDepthImage1">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>770</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdDepth {
+ color: red;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>750</width>
+      <height>565</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Image 1</string>
+     </attribute>
+     <widget class="QLabel" name="imageLabel">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>5</y>
+        <width>700</width>
+        <height>525</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#imageLabel {
+border: 3px solid gray;
+border-radius: 20px;
+background: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>To view the image : menu File/Open</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Image 2</string>
+     </attribute>
+     <widget class="QLabel" name="image2Label">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>5</y>
+        <width>700</width>
+        <height>525</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#image2Label {
+border: 3px solid gray;
+border-radius: 20px;
+background: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Seconde image par dessus&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Focus</string>
+     </attribute>
+     <widget class="QTextEdit" name="message">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>5</y>
+        <width>700</width>
+        <height>525</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Histogram</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>721</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="histogramLayout"/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Procedure</string>
+     </attribute>
+     <widget class="QTextBrowser" name="modOpTextBrowser">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>5</y>
+        <width>700</width>
+        <height>525</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QSlider" name="sliderE">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>630</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdE">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>630</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdE {
+ color: white;
+ background-color: green;
+ }</string>
+    </property>
+    <property name="value" stdset="0">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelE">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>630</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>E:</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="sliderF">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>660</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelF">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>660</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>F:</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdF">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>660</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdF {
+ color: white;
+ background-color: blue;
+ }</string>
+    </property>
+    <property name="value" stdset="0">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMessage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>890</y>
+      <width>761</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Message : </string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoxPoint">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>810</y>
+      <width>88</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelPointsNumber">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>810</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Points Number</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoxSeed">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>810</y>
+      <width>88</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>10</number>
+    </property>
+    <property name="maximum">
+     <number>10000</number>
+    </property>
+    <property name="value">
+     <number>100</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelSeed">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>810</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Seed</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="copyright">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>880</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copyright 2017-2025 Alain the cat  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelWidthImage2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>690</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Width of image 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelHeightImage2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>730</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Height of image 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDepthImage2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>770</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Depth of image 2</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdWidthImage2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>690</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdLargeur2 {
+ color: blue;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdHeightImage2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>730</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdHauteur2 {
+ color: blue;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdDepthImage2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>770</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdDepth2 {
+ color: blue;
+ background-color: white;
+ }</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoxFilter">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>850</y>
+      <width>88</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <number>9</number>
+    </property>
+    <property name="singleStep">
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Size">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>850</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filter Size</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxHistogram">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>690</y>
+      <width>231</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Histogram  of image 1</string>
+    </property>
+    <widget class="QRadioButton" name="radioButtonRed">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Red</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonGreen">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Green</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonBlue">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Blue</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonLuminance">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Luminance</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHistogram">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>120</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the histogram of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Histogram</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxGeometricTransformation">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>10</y>
+      <width>171</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Geometric Transformation</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonVerticalSymmetry">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Performs a  vertical symmetry of the image)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Vertical Symmetry</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHorizontalSymmetry">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Performs a horizontal symmetry of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Horizontal Symmetry</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRotation90">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rotates the image 90° to the right&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string> Rotation 90°</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDiagonalization">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diagonalizes the image in a playing card manner&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Diagonalization</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonMedallion">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puts the image in medallion&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Medallion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTranslation">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Translates the image vertically and horizontally&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Translation</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonZoomPlus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enlarges the image by a factor 2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Zoom +</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonZoomLess">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>450</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reduces the image by a factor 2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Zoom -</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRotation">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Perform a theta radian rotation to the right of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Rotation</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonZoomPlusBilinear">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>420</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enlarges the image by a factor 2 in a smooth way (bilinear method)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Zoom bilinéaire +</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonCrop">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>480</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Crops the image in width and height&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Crop</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonValidation">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>510</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Validates the previous operation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Validate</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxImagesOverlay">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>570</y>
+      <width>171</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Images Overlay</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonRedBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a red background with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Red Background</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGreenBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a green background with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Green Background</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBlueBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a blue background with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Blue Background</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGreenScreen">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overlays image 1 onto image 2 (the green background of image 1 is ignored)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Green Screen</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonAnaglyph">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Creates an anaglyph by superimposing image 2 (right) filtered in blue and green on image 1 (left) filtered in red&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Anaglyph</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonOverlay1on2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Superpose l'image 1 sur l'image 2 par transparence&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Overlay 1 on 2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonWhiteBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a white background with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>White Background</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBlackBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a black background with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Black Background</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTintBackground">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gives a tinted background configurable with the dimensions of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Tint Background</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxFocus">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>570</y>
+      <width>171</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Focus</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonTVPattern">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays a color TV pattern  16x12 on 4 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>TV Pattern</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBWTVPattern">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays a black and white TV pattern 16x12 on 1 byte (384 format)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>B and W TV Pattern</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDisplayCode">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Provides the hex code of the image in the &amp;quot;Focus&amp;quot; tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Display code</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTest1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>131</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Testing a function under development&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Test 1 function</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTest2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>210</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Testing a function under development&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Test 2 Function</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTest4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Testing a function under development&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Test 4 Function</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonTest3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Testing a function under development&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Test 3 Function</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDepth1to4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Increases the depth of the image from 1 to 4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Depth 1 to 4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDepth4to1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reduces the depth of the image from 4 to 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Depth 4 to 1</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxEncryption">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>10</y>
+      <width>171</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Encryption</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonPixellation">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pixelates the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Pixellation</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonEncryption">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encrypts an image with a configurable line offset from 0 to 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Encryption</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFixedEncryption">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encrypts an image with rows shifted from random numbers calculated from a fixed &amp;quot;seed&amp;quot; from 10 to 100&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Fixed Encryption</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDecryption">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encrypts an image with rows shifted from random numbers calculated from a fixed &amp;quot;seed&amp;quot; from 10 to 100&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Decryption</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHideSecret">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hides the secret  monochrome image into the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Hide the secret</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowSecret">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shows a secret  monochrome image from the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Show the secret</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonSteganography">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hides the secret message into the image (Steganography)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Steganography</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shows the secret message into the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Show the text</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonAsciiFile">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>151</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Converts the image to ASCII text to save as a text file (.txt)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Ascii File</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonPuzzle">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>151</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays a puzzle of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Puzzle</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxNoiseSimulator">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>570</y>
+      <width>171</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Noise Simulator</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonWhiteNoise">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with with white noise&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>White Noise</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonPepperAndSaltNoise">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with with pepper and salt noise&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Pepper and Salt Noise</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGaussianNoise">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with with gaussian noise&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Gaussian Noise</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxOrder">
+    <property name="geometry">
+     <rect>
+      <x>1310</x>
+      <y>700</y>
+      <width>171</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Order</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonUndo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Allows you to cancel the previous operation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#undoAct {
+ color: red;
+ background-color: white;
+ }</string>
+     </property>
+     <property name="text">
+      <string>UNDO</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonReset">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resets the image loaded before the changes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#initializeAct {
+ color: green;
+ background-color: white;
+ }</string>
+     </property>
+     <property name="text">
+      <string>RESET</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxNeighborhoodFilters">
+    <property name="geometry">
+     <rect>
+      <x>1310</x>
+      <y>10</y>
+      <width>171</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Neighborhood Filters</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonIntegratingFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Assigns for each pixel the average of the color of the 9 adjacent pixels&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Integrating Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonMedianFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Assigns for each pixel the median of the color of the 9 adjacent pixels&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Median Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGaussianFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Softens the image with a Gaussian filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Gaussian Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHorizontalGradient">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays significant brightness variations horizontally&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Horizontal Gradient</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonVerticalGradient">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays significant brightness variations vertically&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Vertical Gradient</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBorderDetect">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detects borders by significant variation in brightness&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Borders Detect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonErosion">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Applies an image erosion filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Erosion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDilation">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Applies an image dilation filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Dilation</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGamma">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Applies an image gamma filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Gamma</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonPoint">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with a greater or lesser number of black dots&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Point</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonVerticalStroke">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with a greater or lesser number of vertical black lines&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Vertical Stroke</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHorizontalStroke">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>151</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the image with a greater or lesser number of horizontal black lines&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Horizontal Stroke</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelHideMessge">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>850</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Message to hide:</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEditHideMessage">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>850</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxFilterBuilding">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>400</y>
+      <width>351</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Filter Building</string>
+    </property>
+    <widget class="QSpinBox" name="spinBoxF00">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF01">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF02">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>30</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF10">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF11">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>60</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF12">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>60</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF20">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF21">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>90</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBoxF22">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>90</y>
+       <width>88</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>-9</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonCreateFilter">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Creates a filter for image convolution&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Create Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonConvolution">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>130</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Performs the convolution of the image with the filter constructed above&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Convolution</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="orderLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>570</y>
+      <width>751</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;strong&gt;Action requested: &lt;/strong&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxFormat">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>700</y>
+      <width>171</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonMono">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transforms the RGBA image to monocolor code&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Mono</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonIndexed8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transforms the RGBA image to indexed8 code&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Indexed8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonARGB32">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transforms the image to ARGB32 code&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>ARGB32</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonGrayscale8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transforms the RGBA encoded image to grayscale8 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Grayscale8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonReduceSize">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reduces the size of the image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Reduce size</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxHistoric">
+    <property name="geometry">
+     <rect>
+      <x>1310</x>
+      <y>570</y>
+      <width>171</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Historic</string>
+    </property>
+    <widget class="QLCDNumber" name="lcdHisto">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the number of images saved in history&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lcdHisto {
+ color: red;
+ }</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1502</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="openAct"/>
+    <addaction name="separator"/>
+    <addaction name="openImg2Act"/>
+    <addaction name="separator"/>
+    <addaction name="copy1Act"/>
+    <addaction name="separator"/>
+    <addaction name="copy2Act"/>
+    <addaction name="separator"/>
+    <addaction name="swapAct"/>
+    <addaction name="separator"/>
+    <addaction name="saveAct"/>
+    <addaction name="separator"/>
+    <addaction name="printAct"/>
+    <addaction name="separator"/>
+    <addaction name="closeAct"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="aboutAct"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="languageAct">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Icons/Language.png</normaloff>Icons/Language.png</iconset>
+     </property>
+     <addaction name="frenchAct"/>
+     <addaction name="separator"/>
+     <addaction name="englishAct"/>
+    </widget>
+    <addaction name="operatingModeAct"/>
+    <addaction name="separator"/>
+    <addaction name="adjustmentAct"/>
+    <addaction name="separator"/>
+    <addaction name="languageAct"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAbout"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="openAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Open1.png</normaloff>Icons/Open1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="saveAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Save.png</normaloff>Icons/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="closeAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Close.png</normaloff>Icons/Close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="aboutAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/About.png</normaloff>Icons/About.png</iconset>
+   </property>
+   <property name="text">
+    <string>Application</string>
+   </property>
+  </action>
+  <action name="operatingModeAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Procedure.png</normaloff>Icons/Procedure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Procedure</string>
+   </property>
+  </action>
+  <action name="adjustmentAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Tools.png</normaloff>Icons/Tools.png</iconset>
+   </property>
+   <property name="text">
+    <string>Focus</string>
+   </property>
+  </action>
+  <action name="openImg2Act">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Open2.png</normaloff>Icons/Open2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open second image</string>
+   </property>
+  </action>
+  <action name="printAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Print.png</normaloff>Icons/Print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="swapAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Swap.png</normaloff>Icons/Swap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Swap</string>
+   </property>
+  </action>
+  <action name="copy1Act">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Copy1to2 .png</normaloff>Icons/Copy1to2 .png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy 1 on 2</string>
+   </property>
+  </action>
+  <action name="copy2Act">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Copy2to1.png</normaloff>Icons/Copy2to1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy 2 on 1</string>
+   </property>
+  </action>
+  <action name="frenchAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/France.png</normaloff>Icons/France.png</iconset>
+   </property>
+   <property name="text">
+    <string>Français</string>
+   </property>
+  </action>
+  <action name="englishAct">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/UK.png</normaloff>Icons/UK.png</iconset>
+   </property>
+   <property name="text">
+    <string>Anglais</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>sliderA</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LcdA</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderB</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LcdB</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderC</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LcdC</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>343</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderD</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LcdD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>595</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderE</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdE</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>613</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>670</x>
+     <y>616</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderF</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdF</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>663</x>
+     <y>645</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>ouvrir()</signal>
+  <signal>fermer()</signal>
+  <signal>enregistrer()</signal>
+  <signal>about()</signal>
+  <signal>inversion()</signal>
+  <signal>rgb2luminance()</signal>
+  <signal>gaussianfilter()</signal>
+  <signal>fenetragefilter()</signal>
+  <signal>seuillagefilter()</signal>
+  <signal>binarisationfilter()</signal>
+  <signal>seuilageintervallefilter()</signal>
+  <signal>binarisationintervallefilter()</signal>
+  <signal>initialiser()</signal>
+  <signal>hrgradient()</signal>
+  <signal>vrgradient()</signal>
+  <signal>border_detect()</signal>
+ </slots>
+</ui>

@@ -1,0 +1,89 @@
+*** Using the Virtual Environment ***
+
+1 - Install virtualenv (if not already done)
+pip install virtualenv
+
+2 - Create a directory for the project
+example: my-project
+
+3 - Create the virtual environment
+cd my-project
+virtualenv --python C:\Path\To\Python\python.exe venv
+(example of path : C:\Users\alain\AppData\Local\Microsoft\WindowsApps\python3.13.exe)
+
+4 - Activate the virtual environment
+
+C:\Path\To\my-project\venv\Scripts\activate
+
+5 - Code my Python project in the directory:
+(venv) C:\Path\To\my-project
+
+6 - Launch the Python project:
+
+(venv) C:\Path\To\my-project\python my-project.py
+
+7 - If necessary, add the missing packages:
+
+(venv) C:\Path\To\my-project\pip install package-to-add
+
+8 - Back up the libraries with requirements.txt
+pip freeze > requirements.txt
+
+The libraries for this project can be installed with
+pip install -r requirements.txt
+
+9 - Deactivate the virtual environment
+C:\Path\To\my-project\venv\Scripts\deactivate
+
+
+___________________________________________________________
+
+*** Using Cython ***
+
+1 - file Python "helloworld.pyx":
+	import cython
+	print("Hello World")
+
+2 - file Python "setup.py"
+	from setuptools import setup
+	from Cython.Build import cythonize
+
+	setup(
+    		ext_modules = cythonize("helloworld.pyx")
+	)
+
+3 - build file helloworld.c:
+	$ python3 setup.py build_ext --inplace
+
+4 - In Python import helloworld
+	>>> import helloworld
+	Hello World
+
+____________________________________________________________
+
+*** Using QtDesigner ***
+
+1 - Launch QtDesigner program
+
+	pyside6-designer
+
+2 - Save file XML my-project.ui
+
+	pyside6-uic my-project.ui -o my-projectUI.py
+
+-------------------------------------------------------------
+
+*** Using Qt Linguist ***
+
+1 - Run the search for words to translate (create an example.ts file)
+
+pyside6-lupdate example.py form.ui -ts example_fr.ts
+
+2 - Perform the translations by opening the example_fr.ts file
+
+Note: pyside6-linguiste can be used
+
+3 - Create an example.qm file
+
+pyside6-lrelease example_fr.ts -qm example_fr.qm
+	
